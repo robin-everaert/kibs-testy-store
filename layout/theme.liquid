@@ -23,7 +23,7 @@
     </title>
 
     {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
+      <meta name="description" content="aaa">
     {% endif %}
 
     {% render 'meta-tags' %}
@@ -372,5 +372,9 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script>
+        console.log('test cli')
+    </script>
   </body>
 </html>
