@@ -1,1 +1,0 @@
-# kibs-testy-store
