@@ -1,0 +1,88 @@
+<section id="sticky-kibs" class="sticky-kibs__container w-100 d-flex justify-content-center align-items-center pt-4 pb-4">
+    <span class="sticky-kibs__btn-close fs-1">X</span>  
+    <div class="sticky-kibs__content">
+        <h1 class="mt-0">{{ section.settings.sticky_kibs_title_text }}</h1>
+        <p class="fs-1">{{ section.settings.sticky_kibs_content_text }}</p>
+        <a href="https://github.com/robin-everaert" class="kibs-button mt-4" target="_blank">
+            {{ section.settings.sticky_kibs_button_text }}
+        </a> 
+    </div>
+</section>
+
+<style>
+    #sticky-kibs {
+        position: fixed;
+        bottom: 0;
+        z-index: 1000;
+        text-align: center;
+        background-color: #202124;
+        color: #969ba1;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1), 0 -1px 3px rgba(0, 0, 0, 0.06);
+        }
+        .sticky-kibs__btn-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        .sticky-kibs__btn-close:hover {
+            cursor: pointer;
+        }
+        #sticky-kibs h1 {
+            font-size: 4rem;
+        }
+
+        .sticky-kibs__content .kibs-button {
+        display: inline-block;
+        font-size: 2rem;
+        padding: 10px 20px;
+        background-color:  #C41F3B;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        }
+
+        .sticky-kibs__content .kibs-button:hover {
+            background-color: #A51A33;
+        }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector('.sticky-kibs__btn-close').addEventListener("click", () => {
+            // console.log("ok")
+            document.querySelector('#sticky-kibs').classList.remove("d-flex");
+            document.querySelector('#sticky-kibs').classList.add("d-none");
+        });
+    });
+</script>
+
+{% schema %}
+{
+  "name": "Sticky Kibs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sticky_kibs_title_text",
+      "label": "Title Text",
+      "default": "Welcome To My Test Shop"
+    },
+    {
+      "type": "text",
+      "id": "sticky_kibs_content_text",
+      "label": "Content Text",
+      "default": "To See My Other Projects"
+    },
+    {
+      "type": "text",
+      "id": "sticky_kibs_button_text",
+      "label": "Button Text",
+      "default": "Click Here"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky Kibs"
+    }
+  ]
+}
+{% endschema %}
