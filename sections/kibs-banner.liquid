@@ -8,3 +8,25 @@ Section personnalisée pour la bannière d'accueil (Kibs-Banner).
         <p>{{ section.settings.subheading }}</p>
     </div>
 </section>
+
+
+{% schema %}
+    {
+      "name": "Kibs Banner",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titre",
+          "default": "Titre par défaut"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Sous-titre",
+          "default": "Sous-titre par défaut"
+        }
+      ]
+    }
+    {% endschema %}
+    
