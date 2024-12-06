@@ -1,0 +1,24 @@
+/* ===============================
+   Variables
+=============================== */
+:root {
+    --kibs-color-primary: #b80808;
+    --kibs-color-txt: #969BA1;
+    --kibs-color-back: #202124;
+    --kibs-color-back-second: #303134;
+    --kibs-color-border: #3c4043;
+    --kibs-white: #fff;
+
+    --kibs-font-primary: 'Ubuntu', sans-serif;
+}
+
+/* ===============================
+   Global
+=============================== */
+body {
+    font-family: var(--kibs-font-primary);
+}
+
+
+
+
