@@ -3,12 +3,14 @@
 =============================== */
 :root {
     --kibs-color-primary: #b80808;
+    --kibs-color-txt: #121212;
     --kibs-color-txt-2: #969BA1;
-    /* --kibs-color-back: #202124; */
+    --kibs-color-danger: #dc3545;
+    --kibs-color-success: #28a745;
     --kibs-color-back: #F5F5F7;
     --kibs-color-back-2: #303134;
     --kibs-color-border: #3c4043;
-    --kibs-white: #fff;
+    --kibs-color-white: #fff;
 
     --kibs-font-primary: 'Ubuntu', sans-serif;
 }
