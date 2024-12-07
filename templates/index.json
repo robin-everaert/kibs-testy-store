@@ -1,13 +1,19 @@
 {
     "sections": {
-      "main-banner": {
-        "type": "kibs-banner",
+      "kibs-image-banner": {
+        "type": "kibs-image-banner",
         "settings": {
-          "heading": "Bienvenue sur ma boutique",
-          "subheading": "Découvrez nos meilleurs produits."
+          "image": ""
+        }
+      },
+      "kibs-intro-text": {
+        "type": "kibs-intro-text",
+        "settings": {
+          "heading": "Title",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et cursus mi. Vivamus viverra dignissim ex quis auctor. Pellentesque fringilla lectus imperdiet hendrerit sollicitudin. Cras fringilla ex sem, eu consectetur ligula commodo egestas. Vivamus semper euismod tempor. Duis aliquet sem id dictum vehicula. Ut maximus suscipit tellus, non blandit nisi posuere vestibulum. Vivamus neque metus, malesuada non arcu id, eleifend scelerisque lectus. Aliquam in lorem fringilla, rutrum quam ac, suscipit nunc. Nam hendrerit ac elit eu eleifend. Praesent posuere lorem vel lectus cursus, non placerat dolor rutrum. Donec tincidunt iaculis eros ac aliquam. Praesent eleifend lobortis ornare. Proin rhoncus leo ex, tincidunt tincidunt turpis consequat nec. Sed suscipit, metus nec egestas fringilla, felis ex ultricies nisi, et condimentum diam magna id enim. Vivamus placerat odio pulvinar, sagittis risus sed, viverra ante."
         }
       }
     },
-    "order": ["main-banner"]
+    "order": ["kibs-image-banner", "kibs-intro-text"]
   }
   

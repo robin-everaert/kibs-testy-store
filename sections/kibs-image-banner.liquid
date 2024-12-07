@@ -1,0 +1,27 @@
+<section class="kibs-image-banner">
+    <div class="banner-image">
+        <img src="{{ section.settings.image | img_url: '1920x1080' | default: 'https://cdn.shopify.com/s/files/1/0732/6384/1536/files/HD-wallpaper-x-2160-black-white-space-nebula-r-ultrawide-7680x2160-space.jpg?v=1733575336' }}" alt="Banner Image">
+    </div>
+</section>
+
+
+<style>
+.kibs-image-banner .banner-image img {
+    max-height: 25vh;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+</style>
+{% schema %}
+{
+  "name": "Image Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",     
+      "label": "Image de la bannière"
+    }
+  ]
+}
+{% endschema %}
