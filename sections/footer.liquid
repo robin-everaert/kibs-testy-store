@@ -257,7 +257,10 @@
     {% endif %}
   >
     <div class="footer__content-bottom-wrapper page-width">
-      <div class="footer__column footer__localization isolate">
+        <p>This store is a development store. Purchases are not possible here.</p>
+        <p>To view my other projects</p>
+        <button>Click here</button>
+      {% comment %} <div class="footer__column footer__localization isolate">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form>
             {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
@@ -295,7 +298,7 @@
             </ul>
           </div>
         {%- endif -%}
-      </div>
+      </div> {% endcomment %}
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">

@@ -3,9 +3,10 @@
 =============================== */
 :root {
     --kibs-color-primary: #b80808;
-    --kibs-color-txt: #969BA1;
-    --kibs-color-back: #202124;
-    --kibs-color-back-second: #303134;
+    --kibs-color-txt-2: #969BA1;
+    /* --kibs-color-back: #202124; */
+    --kibs-color-back: #F5F5F7;
+    --kibs-color-back-2: #303134;
     --kibs-color-border: #3c4043;
     --kibs-white: #fff;
 
@@ -17,6 +18,11 @@
 =============================== */
 body {
     font-family: var(--kibs-font-primary);
+}
+
+.kibs-color-back-2 {
+    background: var(--kibs-color-back-2) !important;
+    color: var(--kibs-color-txt-2) !important;
 }
 
 
