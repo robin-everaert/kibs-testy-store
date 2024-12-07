@@ -1,0 +1,20 @@
+/* ===============================
+   Footer
+=============================== */
+.kibs__footer-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.kibs__footer-content p {
+    margin-bottom: 0;
+    text-align: center;
+}
+.kibs__footer-content a {
+    margin-top: 1.5em;
+}
+/* .copyright__content span, .copyright__content a  {
+    font-size: 1.4rem;
+} */
