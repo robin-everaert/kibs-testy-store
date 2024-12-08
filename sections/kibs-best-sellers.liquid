@@ -1,0 +1,234 @@
+
+<section class="kibs-best-sellers page-width">
+    <div class="container">
+        <h1>Discover our best sellers</h1>
+        <div class="slider-wrapper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for product in collections['best-sellers'].products %}
+                        {% assign partsProduct = product.title | split: "-" %}
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                {% if product.featured_image %}
+                                    <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                                {% else %}
+                                    <img src="https://via.placeholder.com/300x300?text=No+Image" alt="No image available">
+                                {% endif %}
+                                
+                                <div class="product-card-body">
+                                    {% if partsProduct[1] %}
+                                        <h3>{{ partsProduct[1] }}</h3>
+                                    {% else %}
+                                        <h3>Unnamed Product</h3>
+                                    {% endif %}
+
+                                    <div class="prices-container">
+                                        {% if product.compare_at_price %}
+                                            <span class="original-price">{{ product.compare_at_price | divided_by: 100.0 | format: "%.2f" | replace: ".", "," }}€</span>
+                                        {% endif %}
+                                        <span class="price">{{ product.price | divided_by: 100.0 | format: "%.2f" | replace: ".", "," }}€</span>
+                                    </div>
+                                </div>
+                                
+                                {% if product.description %}
+                                    <p>{{ product.description }}</p>
+                                {% else %}
+                                    <p>No description available</p>
+                                {% endif %}                
+                                <a href="{{ product.url }}">View product</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="icons-container">
+                    <span class="swiper-span swiper-span-prev">{{ 'icon-previous.svg' | inline_asset_content }}</span>
+                    <span class="swiper-span swiper-span-next">{{ 'icon-next.svg' | inline_asset_content }}</span>       
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+/* LAYOUT SLIDER */
+.kibs-best-sellers .slider-wrapper {
+    overflow: hidden; 
+    position: relative;
+    width: 100%;
+}
+.kibs-best-sellers .swiper-container {
+    width: 100%;
+    padding: 20px 0;
+}
+.kibs-best-sellers .swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+.kibs-best-sellers {
+    text-align: center;
+    padding: 50px 20px 50px 20px;
+    position: relative;
+    font-family: var(--kibs-font-primary);
+}
+.swiper-container {
+    width: 100%;
+    padding: 20px 0;
+}
+.kibs-best-sellers .swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+.kibs-best-sellers h1 {
+    margin-bottom: 15px;
+}
+
+/* PRODUCT CARD */
+.kibs-best-sellers .product-card {
+    padding: 20px;
+}
+.kibs-best-sellers .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.kibs-best-sellers .product-card-body {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.kibs-best-sellers .product-card h3 {
+    font-family: var(--kibs-font-primary);
+    font-size: 2.2rem;
+    margin: 0;
+    text-align: start;
+    font-weight: bold;
+}
+.kibs-best-sellers .product-card h4 {
+    margin: 10px 0 0 0;
+    text-align: start;
+    font-size: 2rem;
+}
+.kibs-best-sellers .product-card p {
+    font-size: 1.6rem;
+    color: var(--color-txt);
+    text-align: left;
+    margin-bottom: 2em;
+}
+.kibs-best-sellers .prices-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+}
+.kibs-best-sellers .original-price {
+    text-decoration: line-through;
+    color: var(--kibs-color-danger); 
+    font-size: 2rem; 
+}
+.kibs-best-sellers .product-card .price {
+    color: var(--kibs-color-success);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.kibs-best-sellers a {
+    font-size: 2.5rem;
+    color: var(--kibs-color-white);
+    background: var(--kibs-color-primary);
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 2em 0;
+}
+.kibs-best-sellers a:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+/* SLIDER BTNS */
+.kibs-best-sellers .swiper-pagination {
+    position: relative; 
+}
+.kibs-best-sellers .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+}
+.kibs-best-sellers .swiper-pagination-bullet-active {
+    background-color: var(--kibs-color-primary);
+}
+.kibs-best-sellers .icons-container {
+    margin: 2em 0 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.kibs-best-sellers .icons-container span {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+.kibs-best-sellers .icons-container span:hover {
+    cursor: pointer;
+}
+@media(max-width: 768px) {
+    .kibs-best-sellers a {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 0;
+        /* font-size: 2rem; */
+        padding: 10px;
+    }
+    .icons-container svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media(min-width: 768px) {
+    .kibs-best-sellers .product-card .price {
+        font-size: 3rem;
+    }
+    .kibs-best-sellers .icons-container {
+        margin: 3em 0 2em 0;
+    }
+}
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-span-next',
+                prevEl: '.swiper-span-prev',
+            },
+            slidesPerView: 1, 
+            spaceBetween: 30, 
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    });
+</script>
+
+
+{% schema %}
+{
+  "name": "Kibs Best Sellers",
+  "settings": []
+}
+{% endschema %}
