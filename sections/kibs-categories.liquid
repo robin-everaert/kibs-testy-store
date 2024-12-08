@@ -17,8 +17,6 @@
                             {% endif %}
                             <h3>{{ collection.title | capitalize }}</h3>
                         </a>
-                        {% comment %} <p>{{ collection.description | truncate: 100 }}</p>
-                        <a class="btn" href="{{ collection.url }}">View Collection</a> {% endcomment %}
                     </div>
                 {% endif %}
             {% endfor %}
@@ -72,9 +70,6 @@
 
 }
 </style>
-
-
-
 
 {% schema %}
     {
