@@ -21,6 +21,9 @@
 body {
     font-family: var(--kibs-font-primary);
 }
+h1 {
+    text-align: center;
+}
 
 .kibs-color-back-2 {
     background: var(--kibs-color-back-2) !important;
