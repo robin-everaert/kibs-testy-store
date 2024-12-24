@@ -73,21 +73,9 @@
   margin-left: 0.5rem;
 }
 
-.price--on-sale .price__sale {
-  display: initial;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
 .price--center {
   display: initial;
   justify-content: center;
-}
-
-.price--on-sale .price-item--regular {
-  text-decoration: line-through;
-  color: rgba(var(--color-foreground), 0.75);
-  font-size: 1.3rem;
 }
 
 .unit-price {

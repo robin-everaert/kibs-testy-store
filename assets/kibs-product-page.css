@@ -1,0 +1,22 @@
+.price__container, .kibs__price__sale {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+}
+
+.kibs__price__sale .price-item--regular {
+    color: var(--kibs-color-primary);
+    font-size: 2rem;
+}
+.kibs__price__sale .price-item--sale {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--kibs-color-success);
+}
+.kibs__container-sold-out {
+    display: flex !important;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
