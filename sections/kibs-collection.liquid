@@ -1,7 +1,11 @@
 
-<section class="kibs-best-sellers page-width">
+<section class="kibs-collection page-width">
     <div class="container">
-        <h1>Discover our best sellers</h1>
+        <h1>{{ section.settings.heading }}</h1>
+
+        {% if template.name == 'product' %}
+            <p>Recommended products are not displayed because this is a development store with limited data available.</p>
+          {% endif %}
         <div class="slider-wrapper">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
@@ -54,20 +58,20 @@
 <style>
 
 /* LAYOUT SLIDER */
-.kibs-best-sellers .slider-wrapper {
+.kibs-collection .slider-wrapper {
     overflow: hidden; 
     position: relative;
     width: 100%;
 }
-.kibs-best-sellers .swiper-container {
+.kibs-collection .swiper-container {
     width: 100%;
     padding: 20px 0;
 }
-.kibs-best-sellers .swiper-slide {
+.kibs-collection .swiper-slide {
     display: flex;
     justify-content: center;
 }
-.kibs-best-sellers {
+.kibs-collection {
     text-align: center;
     padding: 50px 20px 50px 20px;
     position: relative;
@@ -77,64 +81,64 @@
     width: 100%;
     padding: 20px 0;
 }
-.kibs-best-sellers .swiper-slide {
+.kibs-collection .swiper-slide {
     display: flex;
     justify-content: center;
 }
-.kibs-best-sellers h1 {
+.kibs-collection h1 {
     margin-bottom: 15px;
 }
 
 /* PRODUCT CARD */
-.kibs-best-sellers .product-card {
+.kibs-collection .product-card {
     padding: 20px;
 }
-.kibs-best-sellers .product-card img {
+.kibs-collection .product-card img {
     width: 100%;
     height: auto;
     border-radius: 8px;
 }
-.kibs-best-sellers .product-card-body {
+.kibs-collection .product-card-body {
     margin-top: 1em;
     display: flex;
     justify-content: space-between;
     align-items: start;
 }
-.kibs-best-sellers .product-card h3 {
+.kibs-collection .product-card h3 {
     font-family: var(--kibs-font-primary);
     font-size: 2.2rem;
     margin: 0;
     text-align: start;
     font-weight: bold;
 }
-.kibs-best-sellers .product-card h4 {
+.kibs-collection .product-card h4 {
     margin: 10px 0 0 0;
     text-align: start;
     font-size: 2rem;
 }
-.kibs-best-sellers .product-card p {
+.kibs-collection .product-card p {
     font-size: 1.6rem;
     color: var(--color-txt);
     text-align: left;
     margin-bottom: 2em;
 }
-.kibs-best-sellers .prices-container {
+.kibs-collection .prices-container {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: end;
 }
-.kibs-best-sellers .original-price {
+.kibs-collection .original-price {
     text-decoration: line-through;
     color: var(--kibs-color-danger); 
     font-size: 2rem; 
 }
-.kibs-best-sellers .product-card .price {
+.kibs-collection .product-card .price {
     color: var(--kibs-color-success);
     font-size: 2.5rem;
     font-weight: bold;
 }
-.kibs-best-sellers a {
+.kibs-collection a {
     font-size: 2.5rem;
     color: var(--kibs-color-white);
     background: var(--kibs-color-primary);
@@ -143,37 +147,37 @@
     padding: 10px 20px;
     margin: 2em 0;
 }
-.kibs-best-sellers a:hover {
+.kibs-collection a:hover {
     cursor: pointer;
     opacity: .8;
 }
 
 /* SLIDER BTNS */
-.kibs-best-sellers .swiper-pagination {
+.kibs-collection .swiper-pagination {
     position: relative; 
 }
-.kibs-best-sellers .swiper-pagination-bullet {
+.kibs-collection .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
 }
-.kibs-best-sellers .swiper-pagination-bullet-active {
+.kibs-collection .swiper-pagination-bullet-active {
     background-color: var(--kibs-color-primary);
 }
-.kibs-best-sellers .icons-container {
+.kibs-collection .icons-container {
     margin: 2em 0 2em 0;
     display: flex;
     justify-content: center;
     align-items: end;
 }
-.kibs-best-sellers .icons-container span {
+.kibs-collection .icons-container span {
     margin-left: 2em;
     margin-right: 2em;
 }
-.kibs-best-sellers .icons-container span:hover {
+.kibs-collection .icons-container span:hover {
     cursor: pointer;
 }
 @media(max-width: 768px) {
-    .kibs-best-sellers a {
+    .kibs-collection a {
         display: block;
         margin: 0 auto;
         width: 80%;
@@ -187,10 +191,10 @@
     }
 }
 @media(min-width: 768px) {
-    .kibs-best-sellers .product-card .price {
+    .kibs-collection .product-card .price {
         font-size: 3rem;
     }
-    .kibs-best-sellers .icons-container {
+    .kibs-collection .icons-container {
         margin: 3em 0 2em 0;
     }
 }
@@ -228,7 +232,20 @@
 
 {% schema %}
 {
-  "name": "Kibs Best Sellers",
-  "settings": []
+  "name": "Kibs Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Default Title for Best Sellers"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Best Sellers",
+      "category": "Products"
+    }
+  ]
 }
 {% endschema %}

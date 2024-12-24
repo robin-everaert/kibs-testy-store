@@ -25,10 +25,13 @@
       "kibs-stats": {
       "type": "Kibs-stats"
     },
-      "kibs-best-sellers": {
-      "type": "Kibs-best-sellers"
+      "kibs-collection": {
+      "type": "Kibs-collection",
+      "settings": {
+        "heading": "Discover our best sellers"
+      }
     }
     },
-    "order": ["kibs-image-banner", "kibs-intro-text", "kibs-categories", "kibs-stats", "kibs-best-sellers"]
+    "order": ["kibs-image-banner", "kibs-intro-text", "kibs-categories", "kibs-stats", "kibs-collection"]
   }
   

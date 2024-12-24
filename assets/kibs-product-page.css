@@ -1,7 +1,7 @@
 .price__container, .kibs__price__sale {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center;
+    align-items: end;
 }
 
 .kibs__price__sale .price-item--regular {
@@ -13,10 +13,3 @@
     font-weight: bold;
     color: var(--kibs-color-success);
 }
-.kibs__container-sold-out {
-    display: flex !important;
-    width: 100%;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
